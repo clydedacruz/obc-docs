@@ -69,4 +69,4 @@ Once complete, you should now be able to SSH into your new VM with the following
 
 Once inside the VM, you can find your WORKSPACE directory under /openblockchain and the obc-peer project under $GOPATH/src/github.com/openblockchain/obc-peer. Additional [instructions](https://github.com/openblockchain/obc-peer/blob/master/README.md) describe how to build, run and test the Open Blockchain Peer project.
 
-**NOTE:** any time you *git clone* any of the projects in your Host's WORKSPACE, the update will be instantly available within the VM /openblockchain directory.
+**NOTE:** any time you *git clone* any of the projects in your Host's WORKSPACE, the update will be instantly available within the VM /openchain directory.
