@@ -209,7 +209,7 @@ Event Hub in a decentralized network is complex in nature, because an event can 
 <td valign="top">
 As defined in the previous sections, a chaincode is a decentralized transactional program, running on the validating nodes. <p><p>
 
-<b>Chaincode Services</b> uses <a href="https://github.com/docker/">Docker</a> to host the chaincode without relying on any particular virtual machine or computer language. Docker provides a secured, lightweight method to sandbox chaincode execution. The environment is a "locked down" and secured container, along with a set of of signed base images containing secure OS and chaincode language, runtime and SDK images for Golang. Additional programming languages can be enabled, if required. <p><p>
+<b>Chaincode Services</b> uses <a href="https://github.com/docker/">Docker</a> to host the chaincode without relying on any particular virtual machine or computer language. Docker provides a secured, lightweight method to sandbox chaincode execution. The environment is a "locked down" and secured container, along with a set of signed base images containing secure OS and chaincode language, runtime and SDK images for Golang. Additional programming languages can be enabled, if required. <p><p>
 
 <b>Secure Registry Services</b> enables Secured Docker Registry of base Open Blockchain images and custom images containing chaincodes.<p><p>
 
