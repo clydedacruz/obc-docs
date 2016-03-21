@@ -1054,7 +1054,7 @@ type WritableLedger interface {
 
 	This function takes a state delta, and applies it to the current state.  The delta will be applied to transition a state forward or backwards depending on the construction of the state delta.  Like the `Executor` methods, `ApplyStateDelta` accepts an opaque interface `id` which should also be passed into `CommitStateDelta` or `RollbackStateDelta` as appropriate.
 
- - 
+  - 
  	```
 	CommitStateDelta(id interface{}) error
 	```
