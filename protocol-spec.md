@@ -3,7 +3,7 @@
 _Draft 0.01_
 
 ## Preface
-This document is the protocol specification of Open Blockchain (OBC), a permissioned blockchain implementation for industry use-cases. It is not intended to be a complete explanation of the implementation, but rather the interfaces and relationships between components in the system and the application.
+This document is the protocol specification of Open Blockchain (OBC), a permissioned blockchain implementation for industry use-cases. It is not intended to be a complete explanation of the implementation, but rather a description of the interfaces and relationships between components in the system and the application.
 
 ### Intended Audience
 The intended audience for this specification includes the following groups:
@@ -13,13 +13,13 @@ The intended audience for this specification includes the following groups:
 - Application developers who want to leverage blockchain technologies to enrich their applications
 
 ### Authors
-These are the authors who wrote various sections of this document:  Binh Q Nguyen, Elli Androulaki, Angelo De Caro, Sheehan Anderson, Manish Sethi, Thorsten Kramp, Alessandro Sorniotti, Marko Vukolic, Florian Simon Schubert, Jason K Yellick, Konstantinos Christidis, Srinivasan Muralidharan, Anna D Derbakova, Dulce Ponceleon, David Kravitz, Diego Masini
+The following authors have written sections of this document:  Binh Q Nguyen, Elli Androulaki, Angelo De Caro, Sheehan Anderson, Manish Sethi, Thorsten Kramp, Alessandro Sorniotti, Marko Vukolic, Florian Simon Schubert, Jason K Yellick, Konstantinos Christidis, Srinivasan Muralidharan, Anna D Derbakova, Dulce Ponceleon, David Kravitz, Diego Masini.
 
 ### Reviewers
-Frank Lu, John Wolpert, Bishop Brock, Nitin Gaur, Sharon Weed
+The following reviewers have contributed to this document:  Frank Lu, John Wolpert, Bishop Brock, Nitin Gaur, Sharon Weed.
 
 ### Acknowledgements
-The following individuals have provided invaluable technical input to the specification:
+The following contributors have provided invaluable technical input to this specification:
 Gennaro Cuomo, Joseph A Latone, Christian Cachin
 ________________________________________________________
 
