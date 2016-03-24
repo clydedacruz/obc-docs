@@ -15,4 +15,4 @@ Finally, like most other modules on OBC, you can always replace the default memb
 
 No, because the OBC Membership Service does not provide, deploy, validate, or execute transactions or business logics. The only role of the OBC Membership Service is to issue digital certificates to validated entities that want to participate in an OBC network. The service is not aware of how or when these certificates are used in any particular OBC network.
 
-The OBC Membership Service does, however, serve as the central regulator of the OBC networks that it services, because the certificates issued by the service are used by OBC networks to regulate and manage their users.
+The OBC Membership Service does, however, serve as the central regulator of the OBC networks that it services, because the certificates that the service issues are used by OBC networks to regulate and manage their users.
