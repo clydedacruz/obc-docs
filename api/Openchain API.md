@@ -48,10 +48,10 @@ below:
 Command | **stdout** result in the event of success
 --- | ---
 `peer`   | N/A
-`status` | String form of ServerStatus_StatusCode
-`stop`   | String form of ServerStatus_StatusCode
+`status` | String form of [StatusCode](https://github.com/openblockchain/obc-peer/blob/master/protos/server_admin.proto#L36)
+`stop`   | String form of [StatusCode](https://github.com/openblockchain/obc-peer/blob/master/protos/server_admin.proto#L36)
 `login`  | N/A
-`vm`     | String form of ServerStatus_StatusCode
+`vm`     | String form of [StatusCode](https://github.com/openblockchain/obc-peer/blob/master/protos/server_admin.proto#L36)
 `chaincode deploy` | The chaincode container name (hash) required for subsequent `chaincode invoke` and `chaincode query` commands
 `chaincode invoke` | The transaction ID (UUID)
 `chaincode query`  | By default, the query result is formatted as a printable string. Command line options support writing this value as raw bytes (-r, --raw), or formatted as the hexadecimal representation of the raw bytes (-x, --hex). If the query response is empty then nothing is output.
