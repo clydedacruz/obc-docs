@@ -136,7 +136,7 @@ Some of these components will be built from the ground up, some will use existin
 
 ![Reference architecture](images/refarch.png)
 
-Figure 2:  Open Blockchain reference architecture
+_Figure 2:  Open Blockchain reference architecture_
 
 Membership services manages identity, privacy and confidentiality on the network. Participants register to obtain identities, which enables the Attribute Authority to issue security keys for transacting. Reputation Manager enables auditors to view  transactions pertaining to a participant, assuming that each auditor has been granted proper access authority by the participants.
 
@@ -196,7 +196,7 @@ Open Blockchain supports two types of transactions: code-deploying transactions 
 
 Open Blockchain provides an implementation of the Byzantine Agreement, with advanced features in fault tolerance and scalability.
 
-Event Hub in a decentralized network is complex in nature, because an event can appear to occur multiple times, once on each peer node. Callbacks can end up receiving multiple invocations for the same event. Therefore, a peer node (preferably non-validating and local) manages the event pub/sub that applications are interacting with. The peer node emits events as conditions satisfied, in no particular order. Events do not persist, so applications should capture events if required.
+Event Stream in a decentralized network is complex in nature, because an event can appear to occur multiple times, once on each peer node. Callbacks can end up receiving multiple invocations for the same event. Therefore, a peer node (preferably non-validating and local) manages the event pub/sub that applications are interacting with. The peer node emits events as conditions satisfied, in no particular order. Events do not persist, so applications should capture events if required.
 
 
 
