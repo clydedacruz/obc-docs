@@ -151,9 +151,9 @@ Open Blockchain is a ledger of digital events, called transactions, shared among
 
 Open Blockchain transactions are secured, private, and confidential. Each participant registers with proof of identity to the network membership services to gain access to the system. Transactions are issued with derived certificates unlinkable to the individual participant, offering a complete anonymity on the network. Transaction content is encrypted with sophisticated key derivation functions to ensure only intended participants may see the content, protecting the confidentiality of the business transactions.
 
-Open Blockchain ledger allows compliance with regulations, and ledger entries are auditable in whole or in part. In collaboration with participants, auditors may obtain time-based certificates to allow viewing the ledger and linking transactions to provide an accurate assessment of the operations.
+Open Blockchain ledger allows compliance with regulations as ledger entries are auditable in whole or in part. In collaboration with participants, auditors may obtain time-based certificates to allow viewing the ledger and linking transactions to provide an accurate assessment of the operations.
 
-Techonologically, Open Blockchain is a fabric of blockchain, where Bitcoin could be a simple application built on Open Blockchain. It is a modular architecture allowing components to be plug-and-play by implementing this protocol specification. It features powerful container technology to host any main stream language for smart contracts development. Leveraging familiar and proven technologies is the motto of the fabric architecture.
+Technologically, Open Blockchain is a fabric of blockchain, where Bitcoin could be a simple application built on Open Blockchain. It is a modular architecture allowing components to be plug-and-play by implementing this protocol specification. It features powerful container technology to host any main stream language for smart contracts development. Leveraging familiar and proven technologies is the motto of the fabric architecture.
 
 ### 1.2 Why Open Blockchain?
 
@@ -375,7 +375,7 @@ enum ConfidentialityLevel {
 More detail on transaction security can be found in section 4.
 
 ### 3.1.2.2 Transaction Specification
-A transaction is always associated with a chaincode specification which defines the chaincode and the execution environment such as language and security context. Currently only Golang is supported for writing chaincode. Other languages may be added in the future.
+A transaction is always associated with a chaincode specification which defines the chaincode and the execution environment such as language and security context. Currently there is an implementation that uses Golang for writing chaincode. Other languages may be added in the future.
 
 ```
 message ChaincodeSpec {
@@ -446,7 +446,7 @@ A query transaction is similar to an invoke transaction, but the message `type` 
 ### 3.1.3 Synchronization Messages
 Synchronization protocol starts with discovery, described above in section 3.1.1, when a peer realizes that it's behind or its current block is not the same with others. A peer broadcasts either `SYNC_GET_BLOCKS`, `SYNC_STATE_GET_SNAPSHOT`, or `SYNC_STATE_GET_DELTAS` and receives `SYNC_BLOCKS`, `SYNC_STATE_SNAPSHOT`, or `SYNC_STATE_DELTAS` respectively.
 
-The installed consensus plugin (e.g. pbft) dictates how synchronization protocol is being applied. Each message is designed for specific situation:
+The installed consensus plugin (e.g. pbft) dictates how synchronization protocol is being applied. Each message is designed for a specific situation:
 
 **SYNC_GET_BLOCKS** requests for a range of contiguous blocks expressed in the message `payload`, which is an object of `SyncBlockRange`.
 ```
@@ -539,7 +539,7 @@ message BlockTransactions {
 * The `previousBlockHash` hash is calculated using the following algorithm.
   1. Serialize the Block message to bytes using the protocol buffer library.
 
-  2. Hash the serialized block message to 512 bits of output using the SHA3 SHAKE256 algorithm as described in [FIPS 202](http://csrc.nist.gov/publications/drafts/fips-202/fips_202_draft.pdf).
+  2. Hash the serialized block message to 512 bits of output using the SHA3 SHAKE256 algorithm as described in [FIPS 202](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf).
 
 * The `transactionHash` is the root of the transaction merkle tree. Defining the merkle tree implementation is a TODO.
 
@@ -587,7 +587,7 @@ The *world state* of a peer refers to the collection of the *states* of all the 
 For the purpose of the description below, `chaincodeID` is assumed to be a valid utf8 string and `ckey` and the `value` can be a sequence of one or more arbitrary bytes.
 
 #### 3.2.2.1 Hashing the world state
-During the functioning of an OBC network, many occasions such as committing transactions and synchronizing peers may require computing a crypto-hash of the world state observed by a peer. For instance, the consensus protocol may require to ensure that a *minimun* number of peers in the network observe the same world state.
+During the functioning of an OBC network, many occasions such as committing transactions and synchronizing peers may require computing a crypto-hash of the world state observed by a peer. For instance, the consensus protocol may require to ensure that a *minimum* number of peers in the network observe the same world state.
 
 Since, computing the crypto-hash of the world state could be an expensive operation, this is highly desirable to organize the world state such that it enables an efficient crypto-hash computation of the world state when a change occurs in the world state. Further, different organization designs may be suitable under different workloads conditions.
 
@@ -599,7 +599,7 @@ Since the OBC is expected to function under a variety of scenarios leading to di
 
 This method models a *merkle-tree* on top of buckets of a *hash table* in order to compute the crypto-hash of the *world state*.
 
-At the core of this method, the *key-values* of the world state are assumed to be stored in a hash-table that consists of a pre-decided number of buckets (`numBuckets`). A hash function (`hashFunction`) is employed to determine the bucket number that should contain a given key. Please note that the `hashFunction` does not represent a crypto-hash method such as SHA3, rather this is a regular programming languages hash function that decides the bucket number for a given key.
+At the core of this method, the *key-values* of the world state are assumed to be stored in a hash-table that consists of a pre-decided number of buckets (`numBuckets`). A hash function (`hashFunction`) is employed to determine the bucket number that should contain a given key. Please note that the `hashFunction` does not represent a crypto-hash method such as SHA3, rather this is a regular programming language hash function that decides the bucket number for a given key.
 
 For modeling the merkle-tree, the ordered buckets act as leaf nodes of the tree - lowest numbered bucket being the left most leaf node in the tree. For constructing the second-last level of the tree, a pre-decided number of leaf nodes (`maxGroupingAtEachLevel`), starting from left, are grouped together and for each such group, a node is inserted at the second-last level that acts as a common parent for all the leaf nodes in the group. Note that the number of children for the last parent node may be less than `maxGroupingAtEachLevel`. This grouping method of constructing the next higher level is repeated until the root node of the tree is constructed.
 
